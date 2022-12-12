@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <META charset="UTF-8"/>
+
+    <style type="text/css"> 
+        .button {width:8em; border-radius:0px; text-align:center;}
+
+    </style>    
+
+    <script type="text/javascript">
+
+        //subrayar o desubrayar//
+        var estasubrayado=0; 
+        function ejecutarSubrayado(){
+            var subrayado=document.getElementById("frase");     
+                if (estasubrayado==0) { //== permite comparar con 0//
+                        subrayado.style.textDecorationLine="underline";
+                        estasubrayado=1;}//será 1 si se modifica//
+                else {subrayado.style.textDecorationLine="none";
+                estasubrayado=0;}
+            }
+           
+        //cambiar color de fondo de texto rojo azul amarillo blanco//
+        /*para usar if/else se usa priemro if, despues ELSE IF, 
+         y finalmente else solo*/
+        var color=0;
+        function cambiarFondo(){
+            var fondo=document.getElementById("frase");
+
+                if (color==0) {fondo.style.backgroundColor="red";
+                        color=1;}
+                else if (color==1) {fondo.style.backgroundColor="blue";
+                        color=2;}
+                else if (color==2) {fondo.style.backgroundColor="yellow";
+                        color=3;}
+                else {fondo.style.backgroundColor="white";
+                        color=0;}
+                }
+           
+        //cambia color de texto rojo azul amarillo negro//
+            var colortexto=0;
+            function colorTexto(){
+                var texto=document.getElementById("frase");
+
+                if (colortexto==0){texto.style.color="red";
+                        colortexto=1;} 
+                else if (colortexto==1){texto.style.color="blue";
+                        colortexto=2;}
+                else if (colortexto==2){texto.style.color="yellow";
+                        colortexto=3;}
+                else {texto.style.color="black";
+                        colortexto=0;}
+            }
+
+            
+        //cambia tamaño texto large x-large xx-large medium//
+        var tamañotexto=0;
+        function cambiarTamaño() {
+            var tamaño=document.getElementById("frase");
+
+                if (tamañotexto==0) {tamaño.style.fontSize="large";
+                        tamañotexto=1;}
+                else if (tamañotexto==1){tamaño.style.fontSize="x-large";
+                        tamañotexto=2;}
+                else if (tamañotexto==2){tamaño.style.fontSize="xx-large";
+                        tamañotexto=3;}
+                else {tamaño.style.fontSize="medium";
+                        tamañotexto=0;}
+        }     
+
+    </script>
+
+</head>
+<body>
+   <p id="frase">Esto es un ejemplo de texto a ser modificado</p>
+    <input type="button" onclick="ejecutarSubrayado()" value="Subrayado" class="button"></input>
+    <input type="button" onclick="cambiarFondo()"value="Fondo" class="button"></input>
+    <input type="button" onclick="colorTexto()"value="Texto" class="button"></input>
+    <input type="button" onclick="cambiarTamaño()"value="Tamaño" class="button"></input>
+</body>
+
+</html>
